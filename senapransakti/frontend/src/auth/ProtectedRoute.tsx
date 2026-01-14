@@ -1,25 +1,28 @@
+import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
+type Role = "ADMIN" | "COMMANDER" | "MEDIC";
+
 type Props = {
-  children: JSX.Element;
-  allowedRoles: ("ADMIN" | "COMMANDER" | "MEDIC")[];
+  children: React.ReactNode;
+  allowedRoles: Role[];
 };
 
 export default function ProtectedRoute({ children, allowedRoles }: Props) {
   const { token, role } = useAuth();
   const location = useLocation();
 
-  // If not logged in → send to login
+  // Not logged in → go to login
   if (!token) {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
-  // If logged in but role not allowed → unauthorized
-  if (!role || !allowedRoles.includes(role)) {
+  // Logged in but role not permitted → unauthorized page
+  if (!role || !allowedRoles.includes(role as Role)) {
     return <Navigate to="/unauthorized" replace />;
   }
 
-  // Otherwise allow access
-  return children;
+  // Access granted
+  return <>{children}</>;
 }

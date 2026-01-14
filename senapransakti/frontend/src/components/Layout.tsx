@@ -1,8 +1,10 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 
+type Role = "ADMIN" | "COMMANDER" | "MEDIC" | null;
+
 export default function Layout() {
-  const { role, logout } = useAuth();
+  const { role, logout } = useAuth() as { role: Role; logout: () => void };
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -22,7 +24,7 @@ export default function Layout() {
           {/* User info */}
           <div className="bg-zinc-800 p-3 rounded mb-6 text-sm">
             <p className="text-gray-400">Logged in as</p>
-            <p className="font-semibold">{role}</p>
+            <p className="font-semibold">{role ?? "Unknown"}</p>
           </div>
 
           <nav className="space-y-3 text-sm">
