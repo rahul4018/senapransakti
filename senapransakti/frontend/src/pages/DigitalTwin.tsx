@@ -24,7 +24,7 @@ export default function DigitalTwin() {
   const [records, setRecords] = useState<Record[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/digital-twin/${id}`)
+    fetch(`https://senapransakti.onrender.com/digital-twin/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSoldier(data.soldier);

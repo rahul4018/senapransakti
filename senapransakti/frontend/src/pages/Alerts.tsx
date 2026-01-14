@@ -13,7 +13,7 @@ export default function Alerts() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/alerts")
+    fetch("https://senapransakti.onrender.com/alerts")
       .then((res) => res.json())
       .then((data) => setAlerts(data))
       .catch(() => setError("Failed to load alerts"));

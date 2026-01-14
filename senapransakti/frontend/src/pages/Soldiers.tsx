@@ -13,7 +13,7 @@ export default function Soldiers() {
   const [unitFilter, setUnitFilter] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/soldiers")
+    fetch("https://senapransakti.onrender.com/soldiers")
       .then((res) => res.json())
       .then(setSoldiers);
   }, []);

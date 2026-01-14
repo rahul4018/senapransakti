@@ -15,7 +15,7 @@ export default function MedicPanel() {
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/soldiers", {
+      const res = await fetch("https://senapransakti.onrender.com/soldiers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(soldier),
@@ -43,7 +43,7 @@ export default function MedicPanel() {
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/health/add", {
+      const res = await fetch("https://senapransakti.onrender.com/health/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

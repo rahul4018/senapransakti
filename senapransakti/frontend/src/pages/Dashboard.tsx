@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await fetch("http://localhost:5000/dashboard/summary");
+      const res = await fetch("https://senapransakti.onrender.com/dashboard/summary");
       const data = await res.json();
       setStats(data);
       setError("");
@@ -38,7 +38,7 @@ export default function Dashboard() {
     setAiOpen(true);
     setAiSummary("Generating summary...");
 
-    const res = await fetch("http://localhost:5000/chat", {
+    const res = await fetch("https://senapransakti.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: "Summarize dashboard health situation" })

@@ -28,7 +28,7 @@ export default function SoldierProfile() {
   const reportRef = useRef<HTMLDivElement>(null);
 
   const fetchData = () => {
-    fetch(`http://localhost:5000/digital-twin/${id}`)
+    fetch(`https://senapransakti.onrender.com/digital-twin/${id}`)
       .then((res) => res.json())
       .then(setData);
   };
@@ -73,7 +73,7 @@ export default function SoldierProfile() {
   // 🧠 Fetch AI analysis
   const generateAI = async () => {
     setAiLoading(true);
-    const res = await fetch(`http://localhost:5000/ai/${id}`);
+    const res = await fetch(`https://senapransakti.onrender.com/ai/${id}`);
     const result = await res.json();
     setAiData(result);
     setAiLoading(false);

@@ -45,7 +45,7 @@ export default function Upload() {
           />
 
           <button
-            onClick={() => uploadFile("http://localhost:5000/soldiers/upload", soldiersFile)}
+            onClick={() => uploadFile("https://senapransakti.onrender.com/soldiers/upload", soldiersFile)}
             className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700"
           >
             Upload Soldiers
@@ -64,7 +64,7 @@ export default function Upload() {
           />
 
           <button
-            onClick={() => uploadFile("http://localhost:5000/health/upload", healthFile)}
+            onClick={() => uploadFile("https://senapransakti.onrender.com/health/upload", healthFile)}
             className="px-4 py-2 bg-green-600 rounded hover:bg-green-700"
           >
             Upload Health Data

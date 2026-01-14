@@ -23,7 +23,7 @@ export default function Login() {
     setDemoOtp(null);
 
     try {
-      const res = await fetch("http://localhost:5000/auth/request-otp", {
+      const res = await fetch("https://senapransakti.onrender.com/auth/request-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -59,7 +59,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/auth/verify-otp", {
+      const res = await fetch("https://senapransakti.onrender.com/auth/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),
